@@ -1,0 +1,146 @@
+/* Estilos generales del formulario */
+
+.container {
+  border-radius: 12px; /* Bordes más redondeados */
+  border: none; /* Eliminamos el borde sólido */
+  background: linear-gradient(145deg, #ffffff, #f0f4f8); /* Degradado suave */
+  min-height: 500px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(39, 88, 134, 0.15); /* Sombra con tono azul */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+  margin: 0 auto;
+  background-color: white;
+  padding: 50px;
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 5px;
+  border: 1px solid #e0e4e8; /* Borde sutil */
+}
+
+/* Estilos para los grupos de formulario */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: #3c4756; /* Color del texto del body */
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border: 1px solid #d8d4d4; /* Borde gris claro */
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: white;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #275886; /* Borde azul al enfocar */
+  outline: none;
+}
+
+/* Estilos para el botón de enviar */
+.product-form button {
+  padding: 12px;
+  background: linear-gradient(90deg, #275886, #3c8dbc); /* Degradado azul */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.product-form button:hover {
+  background: linear-gradient(
+    90deg,
+    #1a4a6e,
+    #2c6a8f
+  ); /* Degradado más oscuro al pasar el mouse */
+}
+
+/* MOVILES */
+
+@media (max-width: 768px) {
+  /* Estilos CSS para telefonos */
+
+  .container {
+    width: 90%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Estilos CSS para tablets */
+
+  .container {
+    width: 80%;
+  }
+}
+
+@media (min-width: 2500px) and (max-width: 3500px) {
+  /* Estilos CSS para tablets */
+
+  .container {
+    width: 30%;
+  }
+}
+
+textarea {
+  width: 100%; /* Ancho fijo */
+  height: 150px; /* Altura fija */
+  resize: vertical; /* Permite redimensionar solo verticalmente */
+  /* Opcional: Estilos adicionales */
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+#response-message p {
+  background-color: #e8f5e9; /* Verde muy claro */
+  color: #1b5e20; /* Verde oscuro */
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  margin: 20px 0;
+  text-align: center;
+  font-weight: bolder;
+}
+
+#response-message-error p {
+  background-color: #ffebee; /* Rojo muy claro */
+  color: #b71c1c; /* Rojo oscuro */
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  margin: 20px 0;
+  text-align: center;
+  font-weight: bolder;
+}
+
+@media (max-width: 768px) {
+  .product-form {
+    width: 100%;
+  }
+}

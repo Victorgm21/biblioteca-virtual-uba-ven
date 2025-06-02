@@ -1,0 +1,122 @@
+@font-face {
+  font-family: "robotolocal"; /* Nombre que le darás a tu fuente */
+  src: url("fuentes/Roboto-Regular.ttf") format("truetype"); /* Ruta al archivo de la fuente */
+  font-weight: normal; /* Peso de la fuente (normal, bold, etc.) */
+  font-style: normal; /* Estilo de la fuente (normal, italic, etc.) */
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e5e5e5;
+  font-family: "robotolocal", serif;
+  color: #3c4756;
+
+  color: #333;
+  line-height: 1.6;
+  background-color: #f5f7fa;
+}
+
+header {
+  background-color: #275886;
+  padding: 0 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  background-color: #284272;
+}
+
+header nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header nav li {
+  display: inline;
+  margin-left: 30px;
+}
+
+header nav li nav a {
+  text-decoration: none;
+  color: white;
+}
+
+/* CONTENIDO DE LA PAGINA */
+
+.content {
+  padding: 0 80px;
+}
+
+/* bienvenida texto */
+
+.page-title {
+  font-size: 28px;
+  text-align: center;
+  margin: 50px 0;
+  color: #3c4756;
+}
+
+/* Estilo para la página actual */
+.pagination-item.active a {
+  background-color: #e7ecea; /* Cambia el color de fondo para resaltar la página actual */
+  font-weight: bold;
+}
+
+.basededatos-estadisticas .libros-digitales-cantidad,
+.basededatos-estadisticas .autores-cantidad,
+.basededatos-estadisticas .libros-cantidad {
+  margin-bottom: 10px;
+  font-size: 35px;
+  font-weight: bolder;
+}
+
+@media (max-width: 1200px) {
+  .content {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 700px) {
+  header > nav > img {
+    display: none;
+  }
+  header {
+    padding: 10px;
+  }
+  header nav {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-form {
+    width: 100%;
+  }
+}
+
+.logouba {
+  width: 70px;
+  height: 100%;
+}

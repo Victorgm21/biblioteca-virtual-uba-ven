@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biblioteca virtual</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../css/insert.css" />
+    <link rel="stylesheet" href="../css/administracion.css" />
+    <link rel="stylesheet" href="../css/all.min.css" />
+  </head>
+  <body>
+    <!-- INICIO HEADER -->
+    <header>
+      <nav>
+        <img src="../logouba.jpg" alt="" class="logouba" />
+        <ul>
+          <li><a href="../index.html">Libros</a></li>
+
+          <li><a href="./buscar.html">Buscar</a></li>
+          <li><a href="./administracion.html">Administración</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- FIN HEADER -->
+
+    <!-- TEXTO PRINCIPAL -->
+
+    <p class="page-title">
+      Bienvenido al área de administración,
+      <span id="nombreUsuario">nombreUsuario</span>.
+    </p>
+
+    <!-- FIN TEXTO PRINCIPAL -->
+
+    <div id="response-message"></div>
+    <div id="response-message-error"></div>
+
+    <!-- CONTENIDO -->
+    <div class="content">
+      <div class="administracion-panel">
+        <p class="administracion-panel-title">Selecciona una acción</p>
+        <div class="crud-selector">
+          <button id="registrar-button">
+            <div class="button-container">
+              <i class="fa-solid fa-plus"></i>
+              <p>Registrar libro</p>
+            </div>
+          </button>
+          <button id="modificar-button">
+            <div class="button-container">
+              <i class="fa-solid fa-pen-to-square"></i>
+              <p>Modificar libro</p>
+            </div>
+          </button>
+          <button id="eliminar-button">
+            <div class="button-container">
+              <i class="fa-solid fa-trash"></i>
+              <p>Eliminar libro</p>
+            </div>
+          </button>
+          <button id="cerrar-sesion-button">
+            <div class="button-container" id="">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <p>Cerrar sesión</p>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Verificar autenticación al cargar la página
+      document.addEventListener("DOMContentLoaded", function () {
+        const usuario = localStorage.getItem("usuario");
+
+        if (!usuario) {
+          // Si no hay usuario en localStorage, redirigir al login
+          window.location.href = "../login.html";
+        } else {
+          document.getElementById("nombreUsuario").textContent = usuario;
+
+          // Aquí puedes cargar el contenido protegido de tu CRUD
+        }
+      });
+
+      // Manejar cierre de sesión
+      document
+        .getElementById("cerrar-sesion-button")
+        .addEventListener("click", function () {
+          fetch("/biblioteca/funciones_php/logout.php", {
+            method: "POST",
+          }).then(() => {
+            localStorage.removeItem("usuario");
+            window.location.href = "../login.html";
+          });
+        });
+    </script>
+    <script type="module" src="../scripts/administracion/buttons.js"></script>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+/* BUSCAR.CSS - Diseño Moderno */
+
+/* Estilos base */
+body {
+  color: #333;
+  line-height: 1.6;
+  background-color: #f5f7fa;
+}
+
+/* Contenedor principal */
+.search-container {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+/* Panel del formulario */
+.search-sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  height: fit-content;
+}
+
+/* Títulos */
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: #3498db;
+}
+
+/* Estilos del formulario */
+.search-form .form-group {
+  margin-bottom: 1.25rem;
+}
+
+.search-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.search-form input,
+.search-form select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  background-color: #f8f9fa;
+}
+
+.search-form input:focus,
+.search-form select:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+  background-color: white;
+}
+
+.search-form button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.search-form button:hover {
+  background: #2980b9;
+}
+
+/* PRODUCT FORM*/
+
+/* Grid de libros */
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-form {
+    width: 100%;
+  }
+
+  .search-container {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .search-sidebar {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .books-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .books-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .book-cover {
+    height: 180px;
+  }
+}
+
+.content > div {
+  margin-bottom: 50px;
+}
+
+/* */

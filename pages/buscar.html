@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biblioteca virtual</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../css/insert.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../css/buscar.css" />
+  </head>
+  <body>
+    <!-- INICIO HEADER -->
+    <header>
+      <nav>
+        <img src="../logouba.jpg" alt="" class="logouba" />
+        <ul>
+          <li><a href="../index.html">Libros</a></li>
+
+          <li><a href="./buscar.html">Buscar</a></li>
+          <li><a href="../pages/administracion.html">Administración</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- FIN HEADER -->
+
+    <!-- TEXTO PRINCIPAL -->
+    <p class="page-title">Busqueda avanzada</p>
+
+    <!-- FIN TEXTO PRINCIPAL -->
+
+    <div id="response-message"></div>
+    <div id="response-message-error"></div>
+
+    <!-- CONTENIDO -->
+
+    <div class="content">
+      <form id="search-book-form" class="product-form">
+        <!-- Campo de Texto -->
+
+        <div class="form-group">
+          <label for="text-search">Introduzca titulo o autor</label>
+          <input type="text" id="text-search" />
+        </div>
+
+        <!-- Campo de Titulo o autor -->
+
+        <div class="form-group">
+          <label for="tipo-busqueda">Tipo de busqueda</label>
+          <select id="tipo-busqueda" name="tipo-busqueda" required>
+            <option value="titulo" selected>Buscar por título</option>
+            <option value="autor">Buscar por autor</option>
+          </select>
+        </div>
+
+        <!-- Campo de categoría -->
+
+        <div class="form-group">
+          <label for="categorias">Categoría</label>
+          <select id="categorias" name="categorias" required>
+            <option value="sin categoría" selected>sin categoría</option>
+          </select>
+        </div>
+
+        <!-- Campo de subcategoría -->
+
+        <div class="form-group">
+          <label for="subcategorias">Sub-categoría</label>
+          <select id="subcategorias" name="subcategorias" required>
+            <option value="sin subcategoría" selected>Sin subcategoría</option>
+          </select>
+        </div>
+
+        <!-- Campo de DISPONIBLE EN FISICO -->
+
+        <div class="form-group">
+          <label for="fisico-select">Disponibildiad</label>
+          <select id="fisico-select" name="fisico-select" required>
+            <option value="no" selected>Físicos y digitales</option>
+            <option value="si">Solo disponible en físico</option>
+          </select>
+        </div>
+
+        <!-- BOTON BUSCAR -->
+        <button type="submit">Buscar Libros</button>
+      </form>
+      <div>
+        <p class="page-title">Resultados de la busqueda:</p>
+        <div class="libros-grid"></div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="../scripts/administracion/obtenerCategorias.js"
+    ></script>
+    <script type="module" src="../scripts/buscar/buscar.js"></script>
+  </body>
+</html>

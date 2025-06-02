@@ -1,0 +1,157 @@
+/*  LIBROS */
+
+/* Estilos para el enlace */
+.libro-link {
+  display: contents; /* Hace que el <a> no afecte el diseño del grid */
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  color: inherit; /* Hereda el color del texto */
+}
+
+.libros-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  gap: 10px;
+  margin-right: -10px; /* Margen negativo para eliminar el espacio al final */
+}
+
+.libro {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  background-color: white;
+  display: flex;
+  width: calc(33.33% - 10px);
+  gap: 20px;
+}
+
+.libro-info {
+  width: 75%;
+  padding: 20px 0;
+  margin-right: 20px;
+}
+
+.libro-titulo,
+.libro-autor {
+  margin-bottom: 10px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.libro-container {
+  width: 60%;
+  margin-top: 20px;
+}
+
+.libro {
+  width: 100%;
+}
+
+.libro-descripcion {
+  white-space: pre-line; /* Conserva los saltos de línea */
+}
+
+.imagen-container {
+  width: 25%;
+}
+.imagen-container > img {
+  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+  height: 400px;
+}
+
+/* Estilos para las etiquetas */
+.etiquetas {
+  display: flex;
+  gap: 8px; /* Espacio entre etiquetas */
+  flex-wrap: wrap; /* Permite que las etiquetas se ajusten en varias líneas */
+  margin-bottom: 12px;
+}
+
+.etiqueta {
+  background-color: #4caf50; /* Color de fondo verde */
+  color: white; /* Color del texto */
+  padding: 10px 15px; /* Espaciado interno */
+  border-radius: 20px; /* Bordes redondeados */
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase; /* Texto en mayúsculas */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  display: flex;
+  align-items: center;
+}
+
+/* Estilos para el botón de descarga */
+.boton-descargar {
+  background-color: #2196f3; /* Color de fondo azul */
+  color: white; /* Color del texto */
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 25px; /* Bordes redondeados */
+  text-decoration: none; /* Quita el subrayado del enlace */
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-block; /* Para que el botón no ocupe toda la línea */
+  transition: background-color 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.boton-descargar:hover {
+  background-color: #1976d2; /* Cambia el color al pasar el mouse */
+}
+
+/* Estilos adicionales para las etiquetas específicas */
+.etiqueta[data-tipo="recomendado"] {
+  background-color: #ff9800; /* Color naranja para etiquetas de recomendación */
+}
+
+.etiqueta[data-tipo="disponibilidad"] {
+  background-color: #1af667; /* Color naranja para etiquetas de recomendación */
+}
+
+.etiqueta[data-tipo="trimestre"] {
+  background-color: #9c27b0; /* Color morado para etiquetas de trimestre */
+}
+
+.etiqueta[data-tipo="categoria"] {
+  background-color: #e91e63; /* Color rosa para etiquetas de carrera */
+}
+
+.etiqueta[data-tipo="subcategoria"] {
+  background-color: #5b23f4; /* Color rosa para etiquetas de carrera */
+}
+
+@media (max-width: 1200px) {
+  .libro-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .libro {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .libro-info {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .etiquetas {
+    justify-content: center;
+  }
+  .imagen-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .imagen-container img {
+    width: 60%;
+    height: auto;
+  }
+  .libro-descripcion {
+    text-align: start;
+  }
+}
